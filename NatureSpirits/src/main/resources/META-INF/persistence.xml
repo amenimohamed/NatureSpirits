@@ -3,6 +3,20 @@
 	<persistence-unit name="NatureSpirits">
 	<jta-data-source>java:/NatureSpirits</jta-data-source>
 		<class>org.esprit.naturespirits.domain.User</class>
+		<class>org.esprit.naturespirits.domain.Journalist</class>
+		<class>org.esprit.naturespirits.domain.Admin</class>
+		<class>org.esprit.naturespirits.domain.OwnerShip</class>
+		<class>org.esprit.naturespirits.domain.Agent</class>
+		<class>org.esprit.naturespirits.domain.Member</class>
+		<class>org.esprit.naturespirits.domain.TrustedMember</class>
+		<class>org.esprit.naturespirits.domain.Location</class>
+		<class>org.esprit.naturespirits.domain.Article</class>
+		<class>org.esprit.naturespirits.domain.Alert</class>
+		<class>org.esprit.naturespirits.domain.Donation</class>
+		<class>org.esprit.naturespirits.domain.Blog</class>
+		<class>org.esprit.naturespirits.domain.Media</class>
+		<class>org.esprit.naturespirits.domain.NewsEntry</class>
+		<class>org.esprit.naturespirits.domain.Subject</class>
 		<properties>
 		<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	</properties>
