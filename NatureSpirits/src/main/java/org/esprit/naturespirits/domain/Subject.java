@@ -2,6 +2,9 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,6 +19,8 @@ public class Subject implements Serializable {
 	@Id
 	private int id_subject;
 	private String text_subject;
+	@OneToMany
+	private List<CommentSub> commentsubs = new ArrayList<CommentSub>();
 	private static final long serialVersionUID = 1L;
 
 	public Subject() {

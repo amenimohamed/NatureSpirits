@@ -14,6 +14,11 @@ public class TrustedMember extends Member implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne
+	private Location location;
+	@ManyToOne
+	private Admin admin;
 
 	public TrustedMember() {
 		super();

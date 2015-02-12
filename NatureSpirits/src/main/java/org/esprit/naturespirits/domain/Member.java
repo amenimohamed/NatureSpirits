@@ -1,7 +1,11 @@
 package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
+
 import org.esprit.naturespirits.domain.User;
 
 /**
@@ -12,10 +16,26 @@ import org.esprit.naturespirits.domain.User;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Member extends User implements Serializable {
 
-	
+	@OneToOne
+	private Blog blog;
+	@OneToMany
+	private List<Alert> alerts = new ArrayList<Alert>();
+	@OneToMany
+	//(mappedBy="member",cascade=CascadeType.ALL)
+	private List<CommentSub> commentsub = new ArrayList<CommentSub>();
+	@OneToMany
+	private List<Donation> donations = new ArrayList<Donation>();
 	private static final long serialVersionUID = 1L;
-
-	public Member() {
+	@OneToMany
+	//(mappedBy="member",cascade=CascadeType.ALL)
+	private List<Invitation> invitations = new ArrayList<Invitation>();
+	@OneToMany
+	private List<Alert> alertcomm = new ArrayList<Alert>(); 
+	@ManyToOne
+	private Admin admin;
+	
+	
+	Member() {
 		super();
 	}
    

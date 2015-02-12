@@ -14,6 +14,11 @@ public class OwnerShip extends User implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne
+	private Admin admin;
+	@OneToOne
+	private Location location;
 
 	public OwnerShip() {
 		super();

@@ -2,6 +2,9 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -17,7 +20,10 @@ public class Blog implements Serializable {
 	private int id_blog;
 	private String content;
 	private static final long serialVersionUID = 1L;
-
+	@OneToMany
+	private List<Media> medias = new ArrayList<Media>();
+	@OneToOne
+	private Member member;
 	public Blog() {
 		super();
 	}   

@@ -2,6 +2,9 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -14,11 +17,24 @@ public class Alert implements Serializable {
 
 	   
 	@Id
+	
 	private int id_alert;
 	private boolean public_alert;
 	private boolean action;
 	private String text;
+	@Enumerated(EnumType.STRING)
+	private AlertType alertype;
 	private static final long serialVersionUID = 1L;
+	@ManyToOne
+	private Agent agent;
+	@OneToMany
+	private List<CommentAlert> commentalerts = new ArrayList<CommentAlert>();
+	@ManyToOne
+	private Member member;
+	@OneToMany
+	private List<Invitation> invitations = new ArrayList<Invitation>();
+	@OneToOne
+	private Location location;
 
 	public Alert() {
 		super();

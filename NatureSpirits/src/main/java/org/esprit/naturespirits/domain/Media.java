@@ -15,7 +15,14 @@ public class Media implements Serializable {
 	@Id
 	private int id_media;
 	private static final long serialVersionUID = 1L;
-
+	@ManyToOne
+	private NewsEntry newsentry;
+	@ManyToOne
+	private Blog blog;
+	
+	@Enumerated
+	private MediaType mediatype;
+	
 	public Media() {
 		super();
 	}   

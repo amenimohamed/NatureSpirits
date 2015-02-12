@@ -2,7 +2,9 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+
 import javax.persistence.*;
+
 
 /**
  * Entity implementation class for Entity: Article
@@ -17,7 +19,9 @@ public class Article implements Serializable {
 	private int id_article;
 	private String title;
 	private static final long serialVersionUID = 1L;
-
+	@ManyToOne
+	private Journalist journalist;
+	
 	public Article() {
 		super();
 	}   

@@ -2,6 +2,9 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.Float;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +21,13 @@ public class Location implements Serializable {
 	private Float altitude;
 	private Float longitude;
 	private static final long serialVersionUID = 1L;
+	@OneToOne
+	private OwnerShip ownership;
+	@OneToOne
+	private Alert alert;
+	@OneToMany
+	private List<TrustedMember> trustedmembers = new ArrayList<TrustedMember>();
+	
 
 	public Location() {
 		super();

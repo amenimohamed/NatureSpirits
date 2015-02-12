@@ -1,6 +1,9 @@
 package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -14,7 +17,14 @@ public class NewsEntry implements Serializable {
 	   
 	@Id
 	private int id_news;
+	@ManyToOne
+	private Agent agent;
+	@OneToMany
+	//(mappedBy="newsentry",cascade=CascadeType.ALL)
+	private List<Media> medias = new ArrayList<Media>();
 	private static final long serialVersionUID = 1L;
+	@Enumerated
+	private NewsCategory newscategory;
 
 	public NewsEntry() {
 		super();
