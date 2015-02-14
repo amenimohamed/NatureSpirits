@@ -16,8 +16,10 @@ public class TrustedMember extends Member implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToOne
+	@JoinColumn(name="location_fk",insertable=false, updatable=false)
 	private Location location;
 	@ManyToOne
+	@JoinColumn(name="admin_fk",insertable=false, updatable=false)
 	private Admin admin;
 
 	public TrustedMember() {

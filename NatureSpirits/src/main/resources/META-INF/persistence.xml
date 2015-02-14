@@ -11,16 +11,13 @@
 		<class>org.esprit.naturespirits.domain.CommentSub</class>
 		<class>org.esprit.naturespirits.domain.Donation</class>
 		<class>org.esprit.naturespirits.domain.Invitation</class>
-		<class>org.esprit.naturespirits.domain.InvitationId</class>
 		<class>org.esprit.naturespirits.domain.Journalist</class>
 		<class>org.esprit.naturespirits.domain.Location</class>
 		<class>org.esprit.naturespirits.domain.Media</class>
 		<class>org.esprit.naturespirits.domain.Member</class>
-		<class>org.esprit.naturespirits.domain.MemberAlertId</class>
 		<class>org.esprit.naturespirits.domain.NewsEntry</class>
 		<class>org.esprit.naturespirits.domain.OwnerShip</class>
 		<class>org.esprit.naturespirits.domain.Subject</class>
-		<class>org.esprit.naturespirits.domain.SubjectId</class>
 		<class>org.esprit.naturespirits.domain.TrustedMember</class>
 		<class>org.esprit.naturespirits.domain.User</class>
 		<properties>

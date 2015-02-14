@@ -25,7 +25,7 @@ public class Admin extends User implements Serializable {
 	private List<Agent> agents = new ArrayList<Agent>();
 	@OneToMany
 	private List<OwnerShip> ownerships = new ArrayList<OwnerShip>();
-	@OneToMany
+	@OneToMany(mappedBy="admin", cascade=CascadeType.ALL)
 	private List<TrustedMember> trustedmembers = new ArrayList<TrustedMember>();
 	@OneToMany
 	private List<Member> members = new ArrayList<Member>();

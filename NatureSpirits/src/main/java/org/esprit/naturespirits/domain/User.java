@@ -2,6 +2,7 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+
 import javax.persistence.*;
 
 /**
@@ -15,6 +16,7 @@ public class User implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_user;
 	private String name;
 	private String surname;   

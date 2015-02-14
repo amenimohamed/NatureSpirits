@@ -17,7 +17,6 @@ public class Alert implements Serializable {
 
 	   
 	@Id
-	
 	private int id_alert;
 	private boolean public_alert;
 	private boolean action;

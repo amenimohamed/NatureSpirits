@@ -23,7 +23,7 @@ public class Invitation implements Serializable {
 	private Member member;
 	@ManyToOne 
 	//@JoinColumn(name="id_invitation",insertable=false,updatable=false)
-	private Invitation invitation;
+	private Alert alert;
 	public Invitation() {
 		super();
 	}

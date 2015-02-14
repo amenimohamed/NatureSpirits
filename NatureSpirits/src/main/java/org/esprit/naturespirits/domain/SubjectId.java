@@ -5,7 +5,6 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Embeddable;
 
 
 
@@ -13,7 +12,7 @@ import javax.persistence.Embeddable;
  * @author Mohamed
  *
  */
-@Embeddable
+
 public class SubjectId implements Serializable{
 
 	/**
