@@ -18,11 +18,9 @@ public class Invitation implements Serializable {
 	private int id_member;
 	@Id
 	private int id_alert;
-	@ManyToOne
-	//@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
 	private Member member;
-	@ManyToOne 
-	//@JoinColumn(name="id_invitation",insertable=false,updatable=false)
+	@ManyToOne@JoinColumn(name="id_alert",insertable=false,updatable=false)
 	private Alert alert;
 	public Invitation() {
 		super();

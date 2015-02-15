@@ -22,14 +22,14 @@ public class Member extends User implements Serializable {
 	private List<Alert> alerts = new ArrayList<Alert>();
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<CommentSub> commentsub = new ArrayList<CommentSub>();
-	@OneToMany
+	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Donation> donations = new ArrayList<Donation>();
 	private static final long serialVersionUID = 1L;
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Invitation> invitations = new ArrayList<Invitation>();
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Alert> alertcomm = new ArrayList<Alert>(); 
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="admin",insertable=false,updatable=false)
 	private Admin admin;
 	
 	

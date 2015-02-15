@@ -25,7 +25,7 @@ public class Location implements Serializable {
 	private OwnerShip ownership;
 	@OneToOne
 	private Alert alert;
-	@OneToMany
+	@OneToMany(mappedBy="location",cascade=CascadeType.ALL)
 	private List<TrustedMember> trustedmembers = new ArrayList<TrustedMember>();
 	
 

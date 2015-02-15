@@ -18,11 +18,11 @@ public class Agent extends User implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	@OneToMany
+	@OneToMany(mappedBy="agent",cascade=CascadeType.ALL)
 	private List<NewsEntry> newsentries = new ArrayList<NewsEntry>();
-	@OneToMany
+	@OneToMany(mappedBy="agent",cascade=CascadeType.ALL)
 	private List<Alert> alerts = new ArrayList<Alert>();
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_agent",insertable=false,updatable=false)
 	private Admin admin;
 	public Agent() {
 		super();

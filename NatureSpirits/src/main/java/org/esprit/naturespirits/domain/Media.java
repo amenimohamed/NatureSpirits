@@ -15,9 +15,9 @@ public class Media implements Serializable {
 	@Id
 	private int id_media;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_news",insertable=false,updatable=false)
 	private NewsEntry newsentry;
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_blog",insertable=false,updatable=false)
 	private Blog blog;
 	
 	@Enumerated

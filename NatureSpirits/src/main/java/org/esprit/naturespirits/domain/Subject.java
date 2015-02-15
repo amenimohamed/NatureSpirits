@@ -19,7 +19,7 @@ public class Subject implements Serializable {
 	@Id
 	private int id_subject;
 	private String text_subject;
-	@OneToMany
+	@OneToMany(mappedBy="subject",cascade=CascadeType.ALL)
 	private List<CommentSub> commentsubs = new ArrayList<CommentSub>();
 	private static final long serialVersionUID = 1L;
 

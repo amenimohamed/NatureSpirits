@@ -19,15 +19,15 @@ public class Admin extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@OneToMany
+	@OneToMany(mappedBy="admin",cascade=CascadeType.ALL)
 	private List<Journalist> journalists = new ArrayList<Journalist>();
-	@OneToMany
+	@OneToMany(mappedBy="admin",cascade=CascadeType.ALL)
 	private List<Agent> agents = new ArrayList<Agent>();
-	@OneToMany
+	@OneToMany(mappedBy="admin",cascade=CascadeType.ALL)
 	private List<OwnerShip> ownerships = new ArrayList<OwnerShip>();
 	@OneToMany(mappedBy="admin", cascade=CascadeType.ALL)
 	private List<TrustedMember> trustedmembers = new ArrayList<TrustedMember>();
-	@OneToMany
+	@OneToMany(mappedBy="admin",cascade=CascadeType.ALL)
 	private List<Member> members = new ArrayList<Member>();
 	public Admin() {
 		super();

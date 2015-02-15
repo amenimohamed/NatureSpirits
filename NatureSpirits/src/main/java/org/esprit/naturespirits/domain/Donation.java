@@ -2,6 +2,7 @@ package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +19,8 @@ public class Donation implements Serializable {
 	private String donator;
 	private int amount;
 	private static final long serialVersionUID = 1L;
+	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
+	private Member member;
 
 	public Donation() {
 		super();

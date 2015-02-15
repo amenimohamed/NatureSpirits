@@ -24,13 +24,13 @@ public class Alert implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private AlertType alertype;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_agent",insertable=false,updatable=false)
 	private Agent agent;
-	@OneToMany
+	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<CommentAlert> commentalerts = new ArrayList<CommentAlert>();
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
 	private Member member;
-	@OneToMany
+	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Invitation> invitations = new ArrayList<Invitation>();
 	@OneToOne
 	private Location location;

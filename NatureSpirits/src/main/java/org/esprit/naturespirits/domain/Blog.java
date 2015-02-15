@@ -20,7 +20,7 @@ public class Blog implements Serializable {
 	private int id_blog;
 	private String content;
 	private static final long serialVersionUID = 1L;
-	@OneToMany
+	@OneToMany(mappedBy="blog",cascade=CascadeType.ALL)
 	private List<Media> medias = new ArrayList<Media>();
 	@OneToOne
 	private Member member;

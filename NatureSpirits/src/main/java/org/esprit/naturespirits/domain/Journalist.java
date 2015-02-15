@@ -22,9 +22,9 @@ public class Journalist extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@OneToMany
+	@OneToMany(mappedBy="journalist",cascade=CascadeType.ALL)
 	private List<Article> articles = new ArrayList<Article>();
-	@ManyToOne
+	@ManyToOne@JoinColumn(name="id_admin",insertable=false,updatable=false)
 	private Admin admin;
 	public Journalist() {
 		super();

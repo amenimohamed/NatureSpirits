@@ -18,11 +18,9 @@ public class CommentSub implements Serializable {
 	private int id_member;
 	@Id
 	private int id_subject;
-	@ManyToOne
-	//@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
 	private Member member;
-	@ManyToOne 
-	//@JoinColumn(name="id_subject",insertable=false,updatable=false)
+	@ManyToOne@JoinColumn(name="id_subject",insertable=false,updatable=false)
 	private Subject subject;
 	private static final long serialVersionUID = 1L;
 
