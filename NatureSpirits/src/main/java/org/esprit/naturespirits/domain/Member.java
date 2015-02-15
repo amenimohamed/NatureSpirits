@@ -29,7 +29,7 @@ public class Member extends User implements Serializable {
 	private List<Invitation> invitations = new ArrayList<Invitation>();
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Alert> alertcomm = new ArrayList<Alert>(); 
-	@ManyToOne@JoinColumn(name="admin",insertable=false,updatable=false)
+	@ManyToOne@JoinColumn(name="admin_fk",insertable=false,updatable=false)
 	private Admin admin;
 	
 	
