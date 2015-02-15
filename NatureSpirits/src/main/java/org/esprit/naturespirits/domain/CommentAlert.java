@@ -17,7 +17,14 @@ public class CommentAlert implements Serializable {
 	private int id_member;
 	@Id
 	private int id_alert;
-	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_member",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_member",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="member_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+		*/
 	private Member member;
 	@ManyToOne@JoinColumn(name="id_alert",insertable=false,updatable=false)
 	private Alert alert;

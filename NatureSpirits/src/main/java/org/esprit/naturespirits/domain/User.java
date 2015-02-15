@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@IdClass(UserPK.class)
+//@IdClass(UserPK.class)
 public class User implements Serializable {
 
 	   
@@ -20,7 +20,7 @@ public class User implements Serializable {
 	private int id_user;
 	private String name;
 	private String surname;   
-	@Id
+	//@Id
 	private String login;
 	private String password;
 	private String role;

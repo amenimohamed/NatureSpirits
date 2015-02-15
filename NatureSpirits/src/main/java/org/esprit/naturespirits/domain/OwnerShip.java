@@ -17,7 +17,14 @@ public class OwnerShip extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@ManyToOne@JoinColumn(name="admin_fk",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_admin",insertable=false,updatable=false)
+/*-
+	@JoinColumns({
+		@JoinColumn(name="id_admin",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="admin_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+		*/
 	private Admin admin;
 	@OneToOne
 	private Location location;

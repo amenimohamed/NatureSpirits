@@ -1,7 +1,9 @@
 package org.esprit.naturespirits.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import org.esprit.naturespirits.domain.Member;
 
 /**
@@ -19,7 +21,13 @@ public class TrustedMember extends Member implements Serializable {
 	@JoinColumn(name="location_fk",insertable=false, updatable=false)
 	private Location location;
 	@ManyToOne
-	@JoinColumn(name="admin_fk",insertable=false, updatable=false)
+	@JoinColumn(name="id_admin",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_admin",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="admin_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+	*/
 	private Admin admin;
 
 	public TrustedMember() {

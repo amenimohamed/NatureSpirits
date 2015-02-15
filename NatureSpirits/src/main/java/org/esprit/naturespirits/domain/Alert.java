@@ -24,11 +24,25 @@ public class Alert implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private AlertType alertype;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne@JoinColumn(name="id_agent",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_agent",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_agent",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="agent_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+	*/
 	private Agent agent;
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<CommentAlert> commentalerts = new ArrayList<CommentAlert>();
-	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_member",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_member",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="member_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})	
+		*/
 	private Member member;
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Invitation> invitations = new ArrayList<Invitation>();

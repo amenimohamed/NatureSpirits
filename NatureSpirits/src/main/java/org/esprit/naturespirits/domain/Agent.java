@@ -22,7 +22,14 @@ public class Agent extends User implements Serializable {
 	private List<NewsEntry> newsentries = new ArrayList<NewsEntry>();
 	@OneToMany(mappedBy="agent",cascade=CascadeType.ALL)
 	private List<Alert> alerts = new ArrayList<Alert>();
-	@ManyToOne@JoinColumn(name="id_agent",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_admin",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_admin",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="admin_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+	*/
 	private Admin admin;
 	public Agent() {
 		super();

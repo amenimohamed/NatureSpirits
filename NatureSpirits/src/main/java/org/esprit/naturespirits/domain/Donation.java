@@ -19,7 +19,15 @@ public class Donation implements Serializable {
 	private String donator;
 	private int amount;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_member",insertable=false,updatable=false)
+
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_member",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="member_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+	*/
 	private Member member;
 
 	public Donation() {

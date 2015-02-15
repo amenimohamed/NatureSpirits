@@ -19,7 +19,14 @@ public class Article implements Serializable {
 	private int id_article;
 	private String title;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne@JoinColumn(name="id_journalist",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_journalist",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_journalist",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="journalist_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+		*/
 	private Journalist journalist;
 	
 	public Article() {

@@ -16,7 +16,7 @@ import org.esprit.naturespirits.domain.User;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Member extends User implements Serializable {
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Blog blog;
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Alert> alerts = new ArrayList<Alert>();
@@ -29,7 +29,14 @@ public class Member extends User implements Serializable {
 	private List<Invitation> invitations = new ArrayList<Invitation>();
 	@OneToMany(mappedBy="member",cascade=CascadeType.ALL)
 	private List<Alert> alertcomm = new ArrayList<Alert>(); 
-	@ManyToOne@JoinColumn(name="admin_fk",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_admin",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+	@JoinColumn(name="id_admin",insertable=false,updatable=false,referencedColumnName = "id_user"),
+	@JoinColumn(name="admin_log",insertable=false,updatable=false,referencedColumnName = "login")
+	})
+	*/
 	private Admin admin;
 	
 	

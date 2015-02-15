@@ -18,9 +18,18 @@ public class CommentSub implements Serializable {
 	private int id_member;
 	@Id
 	private int id_subject;
-	@ManyToOne@JoinColumn(name="id_member",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_member",insertable=false,updatable=false)
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_member",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="member_sub",insertable=false,updatable=false,referencedColumnName = "id_subject")
+		})
+		*/
 	private Member member;
-	@ManyToOne@JoinColumn(name="id_subject",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_subject",insertable=false,updatable=false)
+	
 	private Subject subject;
 	private static final long serialVersionUID = 1L;
 

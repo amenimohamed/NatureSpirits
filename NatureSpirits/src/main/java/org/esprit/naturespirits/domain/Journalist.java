@@ -24,7 +24,15 @@ public class Journalist extends User implements Serializable {
 	
 	@OneToMany(mappedBy="journalist",cascade=CascadeType.ALL)
 	private List<Article> articles = new ArrayList<Article>();
-	@ManyToOne@JoinColumn(name="admin_fk",insertable=false,updatable=false)
+	@ManyToOne
+	@JoinColumn(name="id_admin",insertable=false,updatable=false)
+
+	/*
+	@JoinColumns({
+		@JoinColumn(name="id_admin",insertable=false,updatable=false,referencedColumnName = "id_user"),
+		@JoinColumn(name="admin_log",insertable=false,updatable=false,referencedColumnName = "login")
+		})
+		*/
 	private Admin admin;
 	public Journalist() {
 		super();
