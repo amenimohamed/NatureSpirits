@@ -21,7 +21,7 @@
 		<class>org.esprit.naturespirits.domain.TrustedMember</class>
 		<class>org.esprit.naturespirits.domain.User</class>
 		<properties>
-		<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
 	</properties>
 	</persistence-unit>
 </persistence>
