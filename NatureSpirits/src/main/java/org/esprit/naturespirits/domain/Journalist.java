@@ -21,7 +21,14 @@ public class Journalist extends User implements Serializable {
 	   
 	
 	private static final long serialVersionUID = 1L;
+	private boolean validation_j;
 	
+	public boolean isValidation_j() {
+		return validation_j;
+	}
+	public void setValidation_j(boolean validation_j) {
+		this.validation_j = validation_j;
+	}
 	@OneToMany(mappedBy="journalist",cascade=CascadeType.ALL)
 	private List<Article> articles = new ArrayList<Article>();
 	@ManyToOne
@@ -36,7 +43,7 @@ public class Journalist extends User implements Serializable {
 	private Admin admin;
 	public Journalist() {
 		super();
-	}   
+	} 
 	
    
 }
