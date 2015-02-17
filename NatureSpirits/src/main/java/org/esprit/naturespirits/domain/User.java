@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-//@IdClass(UserPK.class)
+
 public class User implements Serializable {
 
 	   
@@ -20,18 +20,30 @@ public class User implements Serializable {
 	private int id_user;
 	private String name;
 	private String surname;   
-	//@Id
 	private String login;
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	private String address;
 	private String email;
+	@Column(nullable = false)
+	private boolean validation;
+	
+
 	private static final long serialVersionUID = 1L;
 
 	public User() {
 		super();
 	}   
+	
+	public boolean getValidation() {
+		return validation;
+	}
+
+	public void setValidation(boolean validation) {
+		this.validation = validation;
+	}
+
 	public int getId_user() {
 		return this.id_user;
 	}

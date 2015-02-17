@@ -18,8 +18,8 @@ public interface NatureSpiritsRemote {
     public List<User> findAll();
     public User findBYid(int id_user);
 	public List<User> findBYval(boolean validation_j);
-	public void validateUser(boolean validation_j);
-	public void disableUser(boolean validation_j);
+	public void validateUser(User user);
+	public void disableUser(User user);
 
 
 }

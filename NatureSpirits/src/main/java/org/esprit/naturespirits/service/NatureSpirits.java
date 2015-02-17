@@ -62,16 +62,15 @@ public class NatureSpirits implements NatureSpiritsRemote{
 		
 	}
 
-
+   @Override
+	public void validateUser(User user) {
+		user.setValidation(true);
+		em.merge(user);
+   }
 	@Override
-	public void validateUser(boolean validation_j) {
-		String user="Update u from User u Set u.validation_j=:true";
-		em.createQuery(user);
-	}
-	@Override
-	public void disableUser(boolean validation_j) {
-		String user="Update u from User u Set u.validation_j=:false";
-		em.createQuery(user);
+	public void disableUser(User user) {
+		user.setValidation(false);
+		em.merge(user);
 	}
  
 }
